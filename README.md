@@ -49,6 +49,6 @@ This repo contains applications and sofwares created using python
 
 
 ## [Blackjack : Project overview](https://github.com/jamesAlhassan/Pythonista/tree/main/Blackjack)
-- This small game project emulates the blackjack game
+- This small game project emulates the blackjack card game
 - The game is between the user and computer
 - Whoever gest '21' wins
