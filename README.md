@@ -46,3 +46,9 @@ This repo contains applications and sofwares created using python
 - Created a small project that aids easy and simple encryption/ decryption of messages
 - User chooses whether to encrypt or decrypt message
 - He/she then provides the message to encrypy/decrypt with the number of shifts
+
+
+## [Blackjack : Project overview](https://github.com/jamesAlhassan/Pythonista/tree/main/Blackjack)
+- This small game project emulates the blackjack game
+- The game is between the user and computer
+- Whoever gest '21' wins
