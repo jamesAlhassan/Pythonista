@@ -3,9 +3,13 @@
 
 from art import logo
 import random
-
+import os
 
 # FUNCTIONS
+def clear():
+    os.system('clear')
+
+
 def deal_card():
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10,10, 10]
     return (random.choice(cards))
@@ -23,25 +27,28 @@ def calculate_score(cards):
 
 
 def compare(user_score, computer_score):
+    if user_score > 21 and computer_score > 21:
+        return "You went over. You lose 😤"
     if user_score == computer_score:
-        return "Draw"
+        return "Draw 🙃"
     elif computer_score == 0:
-        return "Lose, opponent has Blackjack"
+        return "Lose, opponent has Blackjack 😱"
     elif user_score == 0:
-        return "Win with a Blackjack"
+        return "Win with a Blackjack 😎"
     elif user_score > 21:
-        return "You went over. You lose"
+        return "You went over. You lose 😭"
     elif computer_score > 21:
-        return "Opponent went ove. You win"
+        return "Opponent went over. You win 😁"
     elif user_score > computer_score:
-        return "You win"
+        return "You win 😃"
     else:
-        return "You lose"
+        return "You lose 😤"
 
 
 def play_game():
-    is_game_over = False
+    print(logo)
 
+    is_game_over = False
 
     user_cards = []
     computer_cards = []
@@ -79,4 +86,7 @@ def play_game():
     print(f"    Computer's final hand: {computer_cards}, final_score: {computer_score}")
     print(compare(user_score, computer_score))
 
-play_game()
+
+while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
+    clear()
+    play_game()
