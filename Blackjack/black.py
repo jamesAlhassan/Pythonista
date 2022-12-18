@@ -32,7 +32,7 @@ def compare(user_score, computer_score):
     elif user_score > 21:
         return "You went over. You lose"
     elif computer_score > 21:
-        return "Opponent went over. You win"
+        return "Opponent went ove. You win"
     elif user_score > computer_score:
         return "You win"
     else:
@@ -41,6 +41,7 @@ def compare(user_score, computer_score):
 
 def play_game():
     is_game_over = False
+
 
     user_cards = []
     computer_cards = []
@@ -78,7 +79,4 @@ def play_game():
     print(f"    Computer's final hand: {computer_cards}, final_score: {computer_score}")
     print(compare(user_score, computer_score))
 
-
-replay = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
-while replay == "y":
-    play_game()
+play_game()
