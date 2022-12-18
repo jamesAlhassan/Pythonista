@@ -3,6 +3,7 @@
 This repo contains applications and sofwares created using python
 
 ## ⚙ Tools and Technologies Covered
+- Linux
 - Python 3
 - PyCharm, vim, Jupyter Notebook, Google Colab
 - Python Scripting and Automation
