@@ -3,65 +3,69 @@
 
 from art import logo, vs
 from game_data import data
-from random import randint as rd
+from random import choice as ch
 import os
 
 
 def clear():
     os.system('clear')
+def get_random_account():
+  """Get data from random account"""
+  return ch(data)
 
-correct = True
-while correct:
-    A = rd(0, len(data)) - 1
-    B = rd(0, len(data)) - 1
-    score = 0
-    final_score = 0
-    
-    choice_A = data[rd(0, len(data)) - 1]
-    choice_B = data[rd(0, len(data)) - 1]
-    
-    if choice_A == choice_B:
-        choice_B += 1
-    
-    details_A = []
-    details_B = []
-    
-    print(logo)
-    
-    for k, v in choice_A.items():
-        details_A.append(v)
-    
-    
-    print(f"Compare A: {details_A[0]}, {details_A[2]}, from {details_A[3]}")
-    
-    print(vs)
-    
-    for k, v in choice_B.items():
-        details_B.append(v)
-    
-    print(f"Against B: {details_B[0]}, {details_B[2]}, from {details_B[3]}")
-    
-    followers =  input("Who has more followers? Type 'A' or 'B': ")
-    
+def format_data(account):
+  """Format account into printable format: name, description and country"""
+  des = []
+  for k, v in account.items():
+      des.append(v)
+  return f"{des[0]}, a {des[2]}, from {des[3]}"
 
-    if followers == 'A' and details_A[1] > details_B[1]:
-        clear()
-        score += 1
-        final_score += 1
-        #print(logo)
-        print(f"You're right! Current score: {score}")
-        #print(vs)
-        details_B = details_A
-        
+
+def check_followers(account):
+    des = []
+    for k, v in account.items():
+        des.append(v)
+    return f"{des[1]}"
     
-    elif followers == 'B' and details_A[1] < details_B[1]:
-        clear()
-        score += 1
-        final_score += 1
-        #print(logo)
-        print(f"You're right! Current score: {score}")
-        #print(vs)
-        details_B = details_A
+    
+    
+def check_answer(guess, choice_A, choice_B):
+    if guess == "A" and choice_A > choice_B:
+        return True
+    elif guess == "B" and choice_B > choice_A:
+        return True
     else:
-        print(f"Sorry, that's wrong. Final score: {final_score}")
-        correct = False
+        return False
+
+
+def game():
+  print(logo)
+  score = 0
+  game_should_continue = True
+  choice_A = get_random_account()
+  choice_B = get_random_account()
+
+  while game_should_continue:
+    choice_A = choice_B
+    choice_B = get_random_account()
+    
+    while choice_A == choice_B:
+        choice_B = get_random_account()
+
+    print(f"Compare A: {format_data(choice_A)}.")
+    print(vs)
+    print(f"Against B: {format_data(choice_B)}.")
+    
+    more_followers = input("Who has more followers? Type 'A' or 'B': ").upper()
+    is_correct = check_answer(more_followers, check_followers(choice_A), check_followers(choice_B))
+
+    clear()
+    print(logo)
+    if is_correct:
+      score += 1
+      print(f"You're right! Current score: {score}.")
+    else:
+      game_should_continue = False
+      print(f"Sorry, that's wrong. Final score: {score}")
+
+game()
