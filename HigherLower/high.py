@@ -9,9 +9,12 @@ import os
 
 def clear():
     os.system('clear')
+
+
 def get_random_account():
   """Get data from random account"""
   return ch(data)
+
 
 def format_data(account):
   """Format account into printable format: name, description and country"""
@@ -26,9 +29,8 @@ def check_followers(account):
     for k, v in account.items():
         des.append(v)
     return f"{des[1]}"
-    
-    
-    
+
+
 def check_answer(guess, choice_A, choice_B):
     if guess == "A" and choice_A > choice_B:
         return True
@@ -44,6 +46,7 @@ def game():
   game_should_continue = True
   choice_A = get_random_account()
   choice_B = get_random_account()
+
 
   while game_should_continue:
     choice_A = choice_B
