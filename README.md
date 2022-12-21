@@ -53,3 +53,8 @@ This repo contains applications and sofwares created using python
 - This small game project emulates the blackjack card game
 - The game is between the user and computer
 - Whoever gest '21' wins
+
+## [Secret Auction: Project overview](https://github.com/jamesAlhassan/Pythonista/tree/main/secretAuction)
+- This is an auction program that helps bidders to bid secretly
+- This is to prevent manipulations and influencing other bidders
+- It then returns the highest and the bid amount
