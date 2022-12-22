@@ -32,12 +32,13 @@ resources = {
 money = 0
 
 
-def is_sufficient(ingredients):
-    for item in ingredients:
-        if ingredients[item] > resources[item]:
-            print(f"Sorry! {item} not sufficient")
+def is_resource_sufficient(order_ingredients):
+    """Returns True when order can be made, False if ingredients are insufficient."""
+    for item in order_ingredients:
+        if order_ingredients[item] > resources[item]:
+            print(f"​Sorry there is not enough {item}.")
             return False
-        return True
+    return True
 
 
 machine_on = True
@@ -52,6 +53,6 @@ while machine_on:
         print(f"Coffee: {resources['coffee']}g")
         print(f"Money: ${money}")
 
-    elif choice == "espresso":
+    else:
         order = menu[choice]
-        sufficient(order["ingredients"])
+        is_resource_sufficient(order["ingredients"])
