@@ -64,6 +64,13 @@ def is_transaction_successful(money_received, drink_cost):
         return False
 
     
+def make_coffee(drink_name, order_ingredients):
+    """Deduct the required ingredients from the resources."""
+    for item in order_ingredients:
+        resources[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name} ☕️. Enjoy!")
+
+
 machine_on = True
 while machine_on:
     choice = input("What would you like? (espresso/latte/cappuccino): ")
