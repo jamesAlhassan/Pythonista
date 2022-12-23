@@ -4,7 +4,7 @@ class Question:
         self.answer = answer
 
     def __repr__(self):
-        return f"Question: {self.question} --> Answer: {self.answer}"
+        return f"{self.question} ({self.answer}/false)"
 
 
 # question_1 = Question("What is the brain of the computer? ", "CPU")
