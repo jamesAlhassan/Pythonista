@@ -3,5 +3,8 @@ class Question:
         self.question = question
         self.answer = answer
 
+    def __repr__(self):
+        return f"Question: {self.question} --> Answer: {self.answer}"
 
-question_1 = Question("What is the brain of the computer? ", "CPU")
+
+# question_1 = Question("What is the brain of the computer? ", "CPU")
