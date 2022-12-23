@@ -3,4 +3,5 @@ class Question:
         self.question = question
         self.answer = answer
 
-question_1 = Question("")
+
+question_1 = Question("What is the brain of the computer? ", "CPU")
