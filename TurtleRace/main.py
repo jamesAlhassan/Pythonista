@@ -20,12 +20,22 @@ orangy.goto(x=-235, y=30)
 yellowy = Turtle(shape="turtle")
 yellowy.penup()
 yellowy.color("yellow")
-yellowy.goto(x=-235, y=30)
+yellowy.goto(x=-235, y=60)
 
 bluewy = Turtle(shape="turtle")
 bluewy.penup()
 bluewy.color("blue")
-bluewy.goto(x=-235, y=30)
+bluewy.goto(x=-235, y=90)
+
+greeny = Turtle(shape="turtle")
+greeny.penup()
+greeny.color("green")
+greeny.goto(x=-235, y=-30)
+
+purply = Turtle(shape="turtle")
+purply.penup()
+purply.color("purple")
+purply.goto(x=-235, y=-60)
 
 screen.listen()
 
