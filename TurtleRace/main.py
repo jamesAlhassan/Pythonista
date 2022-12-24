@@ -22,6 +22,11 @@ yellowy.penup()
 yellowy.color("yellow")
 yellowy.goto(x=-235, y=30)
 
+bluewy = Turtle(shape="turtle")
+bluewy.penup()
+bluewy.color("blue")
+bluewy.goto(x=-235, y=30)
+
 screen.listen()
 
 screen.exitonclick()
