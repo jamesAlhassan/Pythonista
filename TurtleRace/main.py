@@ -1,5 +1,6 @@
+import random
 from turtle import Turtle, Screen
-from random import choice as ch
+
 
 
 is_race_on = False
@@ -20,6 +21,11 @@ for timmy in range(len(colors)):
 
 if user_bet:
     is_race_on = True
+
+while is_race_on:
+    for turtle in all_turtles:
+        rand_distance = random.randint(1, 10)
+        turtle.fd(rand_distance)
 
 
 
