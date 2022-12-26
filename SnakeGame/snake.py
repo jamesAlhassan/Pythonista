@@ -1,9 +1,8 @@
-from turtle import Turtle, Screen
-import time
+from turtle import Turtle
+
 
 X_POSITIONS = [0, -20, -40]
 class Snake:
-# screen Setup
     def __init__(self):
         self.snakes = []
         self.create_snake()
@@ -15,13 +14,14 @@ class Snake:
             snake.penup()
             snake.goto(x=X_POSITIONS[x], y=0)
             self.snakes.append(snake)
-screen = Screen()
-screen.setup(width=600, height=600)
-screen.bgcolor("black")
-screen.title("Snake Game")
-screen.tracer(0)
 
+    def move_snake(self):
+        for sn in range(len(self.snakes) - 1, 0, -1):
+            new_x = self.snakes[sn - 1].xcor()
+            new_y = self.snakes[sn - 1].ycor()
+            self.snakes[sn].goto(x=new_x, y=new_y)
+        self.snakes[0].fd(20)
+        self.snakes[0].lt(90)
 
-# Turtle Setup
 
 
