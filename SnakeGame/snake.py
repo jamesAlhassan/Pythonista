@@ -27,6 +27,9 @@ class Snake:
         snake.goto(x=X_POSITIONS[x], y=0)
         self.snakes.append(snake)
 
+    def extend_snake(self):
+        self.add_snake(self.snakes[-1].position())
+
     def move_snake(self):
         for sn in range(len(self.snakes) - 1, 0, -1):
             new_x = self.snakes[sn - 1].xcor()
