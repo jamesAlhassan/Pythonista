@@ -11,6 +11,8 @@ screen.tracer(0)
 
 
 snake = Snake()
+food = 
+
 screen.listen()
 screen.onkey(fun=snake.up, key="Up")
 screen.onkey(fun=snake.down, key="Down")
