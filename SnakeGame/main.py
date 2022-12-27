@@ -30,6 +30,7 @@ while game_is_on:
 
     if snake.head.distance(food) < 13:
         food.refresh()
+        score.increase_score()
 
 
 
