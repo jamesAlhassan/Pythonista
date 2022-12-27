@@ -5,6 +5,7 @@ from food import Food
 ALIGN = "center"
 FONT = ('Cursive', 24, 'normal')
 
+
 class Score(Food):
     def __init__(self):
         super().__init__()
