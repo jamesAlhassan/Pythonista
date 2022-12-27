@@ -20,6 +20,7 @@ class Snake:
             snake = Turtle(shape="square")
             snake.color("white")
             snake.penup()
+            snake.shapesize(stretch_wid=0.7, stretch_len=0.7)
             snake.goto(x=X_POSITIONS[x], y=0)
             self.snakes.append(snake)
 
