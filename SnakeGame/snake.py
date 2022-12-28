@@ -25,7 +25,8 @@ class Snake:
         # new_segment.shapesize(stretch_len=0.5, stretch_wid=0.5)
         new_segment.goto(position)
         self.segments.append(new_segment)
-
+    # def hidden(self):
+    #     self.head
     def extend(self):
         self.add_segment(self.segments[-1].position())
 

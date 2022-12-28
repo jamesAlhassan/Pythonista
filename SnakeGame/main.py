@@ -33,9 +33,19 @@ while game_is_on:
         scoreboard.increase_score()
 
     #Detect collision with wall.
-    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        game_is_on = False
-        scoreboard.game_over()
+    # if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
+    #     game_is_on = False
+    #     scoreboard.game_over()
+
+    # show from the other side
+    if snake.head.xcor() == 280:
+        y = snake.head.ycor()
+        snake.head.goto(x=-280, y=y)
+
+    if snake.head.ycor() == 280:
+        x = snake.head.xcor()
+        snake.head.goto(x=x, y=-280)
+
 
     #Detect collision with tail.
     for segment in snake.segments:
