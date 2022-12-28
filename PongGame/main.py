@@ -14,9 +14,7 @@ def move_up():
     new_y = paddle.ycor() + 20
     paddle.goto(paddle.xcor(), new_y)
 
-def move_down():
-    new_y = paddle.ycor() - 20
-    paddle.goto(paddle.xcor(), new_y)
+
 
 
 screen.listen()
