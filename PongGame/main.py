@@ -7,11 +7,6 @@ screen.bgcolor("black")
 screen.tracer(0)
 
 
-paddle = Turtle(shape="square")
-paddle.shapesize(stretch_wid=5, stretch_len=1)
-paddle.color("white")
-paddle.penup()
-paddle.goto(x=350, y=0)
 
 def move_up():
     new_y = paddle.ycor() + 20
