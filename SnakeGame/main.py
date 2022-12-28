@@ -42,15 +42,15 @@ while game_is_on:
         y = snake.head.ycor()
         snake.head.goto(x=-280, y=y)
     elif snake.head.xcor() == -280:
-        y = snake.head.ycor()
-        snake.head.goto(x=280, y=y)
+        y_1 = snake.head.ycor()
+        snake.head.goto(x=280, y=y_1)
 
     if snake.head.ycor() == 280:
         x = snake.head.xcor()
         snake.head.goto(x=x, y=-280)
     elif snake.head.ycor() == -280:
-        x = snake.head.xcor()
-        snake.head.goto(x=x, y=280)
+        x_1 = snake.head.xcor()
+        snake.head.goto(x=x_1, y=280)
 
 
     #Detect collision with tail.
