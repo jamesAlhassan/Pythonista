@@ -13,5 +13,15 @@ paddle.color("white")
 paddle.penup()
 paddle.goto(x=350, y=0)
 
+def move_up():
+    new_y = paddle.ycor() + 20
+    paddle.goto(paddle.xcor(), new_y)
 
+def move_down():
+    new_y = paddle.ycor() - 20
+    paddle.goto(paddle.xcor(), new_y)
+
+screen.listen()
+screen.onkey(move_up, "Up")
+screen.onkey(move_down, "Down")
 screen.exitonclick()
