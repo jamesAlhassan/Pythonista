@@ -35,4 +35,5 @@ while game_is_on:
     # crosses all the cars
     if player.is_at_finish():
         player.go_to_start()
+        car_manager.level_up()
 screen.exitonclick()
