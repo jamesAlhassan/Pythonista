@@ -13,6 +13,8 @@ screen.tracer(0)
 # player object instantiation
 player = Player()
 
+screen.listen()
+screen.onkey(func=player.go_up, key="Up")
 
 game_is_on = True
 while game_is_on:
