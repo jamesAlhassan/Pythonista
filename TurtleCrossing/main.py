@@ -13,6 +13,7 @@ screen.tracer(0)
 # Object instantiation
 player = Player()
 car_manager = CarManager()
+score = Scoreboard()
 
 
 screen.listen()
