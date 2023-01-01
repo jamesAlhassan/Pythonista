@@ -27,6 +27,7 @@ class Snake:
         self.segments.append(new_segment)
     # def hidden(self):
     #     self.head
+
     def extend(self):
         self.add_segment(self.segments[-1].position())
 
