@@ -6,4 +6,3 @@ class Result(Turtle):
         super().__init__()
         self.hideturtle()
         self.penup()
-        self.color("green")
