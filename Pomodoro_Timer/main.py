@@ -5,15 +5,17 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 25
+WORK_MIN = 30
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
 # ---------------------------- START TIMER------------------------------- #
+
+
 def start_timer():
-    counter(30)
+    counter(WORK_MIN)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
