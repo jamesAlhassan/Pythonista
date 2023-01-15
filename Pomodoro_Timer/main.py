@@ -21,7 +21,7 @@ def start_timer():
 
 
 def counter(count):
-    canvas.itemconfig(timer_text, text=count)
+    canvas.itemconfig(timer_text, text=f'00:{count}')
     if count > 0:
         window.after(1000, counter, count - 1)
 # ---------------------------- UI SETUP ------------------------------- #
