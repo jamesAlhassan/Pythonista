@@ -19,14 +19,14 @@ LONG_BREAK_MIN = 20
 
 # Window/Screen Setup
 window = Tk()
-window.title('Pomodoro Timer')
+window.title('Workout Timer')
 window.config(padx=100, pady=50, bg=YELLOW)
 
 # Canvas Setup
-canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
-canvas_img = PhotoImage(file='tomato.png')
-canvas.create_image(100, 112, image=canvas_img)
-canvas.create_text(100, 130,text='00:00', fill='white', font=(FONT_NAME, 35, 'bold'))
+canvas = Canvas(width=300, height=307, bg=YELLOW, highlightthickness=0)
+canvas_img = PhotoImage(file='work_out.png')
+canvas.create_image(150, 153, image=canvas_img)
+canvas.create_text(190, 50, text='00:00', fill='red', font=(FONT_NAME, 35, 'bold'))
 canvas.pack()
 
 
