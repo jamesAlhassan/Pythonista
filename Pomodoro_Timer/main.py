@@ -34,7 +34,13 @@ canvas.create_image(150, 153, image=canvas_img)
 canvas.create_text(190, 50, text='00:00', fill=RED, font=(FONT_NAME, 35, 'bold'))
 canvas.grid(column=1, row=1)
 
-# Button
+# Buttons
+start_button =Button(text='Start')
+start_button.grid(column=0, row=3)
+
+reset_button =Button(text='Reset')
+reset_button.grid(column=3, row=3)
+
 
 
 
