@@ -1,13 +1,17 @@
 from tkinter import *
 # ---------------------------- CONSTANTS ------------------------------- #
+# COLOURS
 PINK = "#e2979c"
 RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
+
+# OTHER
 FONT_NAME = "Courier"
 WORK_MIN = 30
-SHORT_BREAK_MIN = 5
-LONG_BREAK_MIN = 20
+SHORT_BREAK_MIN = 15
+LONG_BREAK_MIN = 90
+reps = 0
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
@@ -15,15 +19,33 @@ LONG_BREAK_MIN = 20
 
 
 def start_timer():
-    counter(WORK_MIN)
+    global reps
+    reps += 1
+    if reps % 8 == 0:
+        counter(LONG_BREAK_MIN)
+        timer_label.config(text='BREAK', fg=RED)
+    elif reps % 2 == 0:
+        counter(SHORT_BREAK_MIN)
+        timer_label.config(text='REST', fg=PINK)
+    else:
+        counter(WORK_MIN)
+        timer_label.config(text='WORKOUT....', fg=GREEN)
 
-# ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
+
+# ---------------------------- COUNTDOWN ------------------------------- #
 
 
 def counter(count):
-    canvas.itemconfig(timer_text, text=f'00:{count}')
+    if count < 10:
+        canvas.itemconfig(timer_text, text=f'00:0{count}')
+    else:
+        canvas.itemconfig(timer_text, text=f'00:{count}')
+
     if count > 0:
         window.after(1000, counter, count - 1)
+    else:
+        start_timer()
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 # Window/Screen Setup
@@ -35,7 +57,7 @@ window.config(padx=100, pady=50, bg=YELLOW)
 
 
 # Labels
-timer_label = Label(text='Timer', fg=GREEN, bg=YELLOW, font=(FONT_NAME, 50, 'italic'))
+timer_label = Label(text='Timer', fg=GREEN, bg=YELLOW, font=(FONT_NAME, 30, 'italic'))
 timer_label.grid(column=1, row=0)
 
 # Canvas Setup
