@@ -1,4 +1,4 @@
-Candidate,Party,Region,Votes,x,y,a,b
+Candidate,Party,Region,Votes,x,y
 Nana Addo Dankwa Akufo-Addo,NPP,Ahafo,145584,-202,-144
 John Dramani Mahama,NDC,Ahafo,116485,-202,-144
 Christian Kwabena Andrews,GUM,Ahafo,1493,-202,-144
@@ -6,8 +6,11 @@ Ivor Kobina Greenstreet,CPP,Ahafo,194,-202,-144
 Akua Donkor,GFP,Ahafo,49,-202,-144
 Henry Herbert Lartey,GCPP,Ahafo,51,-202,-144
 Hassan Ayariga,APC,Ahafo,150,-202,-144
-Percival Kofi Akpaloo,LPG,Ahafo,113,-202,-144,
+Percival Kofi Akpaloo,LPG,Ahafo,113,-202,-144
 David Asibi Ayindenaba Apasera,PNC,Ahafo,82,-202,-144
 Brigitte Akosua Dzogbenuku,PPP,Ahafo,52,-202,-144
 Nana Konadu Agyeman Rawlings,NDP,Ahafo,135,-202,-144
-Alfred Kwame Asiedu Walker,IDN,North,103,-125,164
+Alfred Kwame Asiedu Walker,IDN,Ahafo,103,-125,164
+Nana Addo Dankwa Akufo-Addo,NPP,Bono,145584,-300,200
+John Dramani Mahama,NDC,Bono,116485,-300,200
+
