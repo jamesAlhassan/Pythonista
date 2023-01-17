@@ -1,8 +1,24 @@
 from tkinter import *
+import pandas as pd
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
+def save_password_details():
+    num = 0
+    website_input = website_entry.get()
+    email_input = email_entry.get()
+    password_input = password_entry.get()
+    num += 1
 
+    with open('data.txt', 'a') as data:
+        data.write(f'SN: {num} | website: {website_input} | email: {email_input} | password: {password_input}\n')
+   
+
+
+    website_entry.delete(0, END)
+    email_entry.delete(0, END)
+    password_entry.delete(0, END)
+        
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
@@ -28,9 +44,11 @@ password_label.grid(row=3, column=0)
 # Entries
 website_entry = Entry(width=45, bg='white', highlightthickness=0)
 website_entry.grid(row=1, column=1, columnspan=2)
+website_entry.focus()
 
 email_entry = Entry(width=45, bg='white', highlightthickness=0)
 email_entry.grid(row=2, column=1, columnspan=2)
+email_entry.insert(0, 'example@abc.com')
 
 password_entry = Entry(width=27, bg='white', highlightthickness=0)
 password_entry.grid(row=3, column=1)
@@ -39,7 +57,7 @@ password_entry.grid(row=3, column=1)
 generate_button = Button(text='Generate Pass.', width=15, bg='white')
 generate_button.grid(row=3, column=2)
 
-add_button = Button(text='Add', width=45, bg='white')
+add_button = Button(text='Add', width=45, bg='white', command=save_password_details)
 add_button.grid(row=4, column=1, columnspan=2)
 
 window.mainloop()
