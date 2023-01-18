@@ -16,9 +16,9 @@ def generate_password():
     password_symbols = []
     password_numbers = []
 
-    [password_letters.append(rd.choice(letters)) for num in range(rd.randint(9, 10))]
-    [password_symbols.append(rd.choice(symbols)) for num in range(rd.randint(9, 10))]
-    [password_numbers.append(rd.choice(numbers)) for num in range(rd.randint(9, 10))]
+    [password_letters.append(rd.choice(letters)) for _ in range(rd.randint(9, 10))]
+    [password_symbols.append(rd.choice(symbols)) for _ in range(rd.randint(9, 10))]
+    [password_numbers.append(rd.choice(numbers)) for _ in range(rd.randint(9, 10))]
 
     password_list = password_letters + password_numbers + password_symbols
     rd.shuffle(password_list)
@@ -43,18 +43,17 @@ def save_password_details():
         messagebox.showerror(title='Error', message="Empty input!!!\nField can't be empty")
     else:
         is_ok = messagebox.askyesno(title=website_input,
-                                message=f'Details\nEmail: {email_input}\nPassword: '
-                                        f'{password_input}\nDo you want to save?')
+                                    message=f'Details\nEmail: {email_input}\nPassword: '
+                                            f'{password_input}\nDo you want to save?')
         if is_ok:
             with open('data.txt', 'a') as data:
-                data.write(f'SN: {num} | website: {website_input} | email: {email_input} | password: {password_input}\n')
+                data.write(f'SN: {num} | website: {website_input} | '
+                           f'email: {email_input} | password: {password_input}\n')
 
                 website_entry.delete(0, END)
                 email_entry.delete(0, END)
                 password_entry.delete(0, END)
 
-
-        
 # ---------------------------- UI SETUP ------------------------------- #
 
 
