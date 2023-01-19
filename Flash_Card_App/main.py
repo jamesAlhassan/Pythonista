@@ -27,12 +27,20 @@ def unkown_word():
     canvas.itemconfig(background, image=back_img)
 
 
+def timer(count):
+    timer_label.config(text=f'00:0{count}')
+    if count > 0:
+        window.after(1000, timer, count - 1)
+    else:
+        timer(5)
+
 
 # Window Setup
 window = Tk()
 window.title('Flashy')
 window.config(pady=50, padx=50, bg=BACKGROUND_COLOR)
 window.after(5000, unkown_word)
+# window.after(1000, timer)
 
 # Canvas Setup
 canvas = Canvas(width=800, height=526, bg=BACKGROUND_COLOR)
@@ -55,8 +63,10 @@ check_button.grid(row=1, column=2)
 next_word()
 
 # timer
-timer = Label(text='', bg='black', fg='white')
-timer.grid(row=1, column=1)
+timer_label = Label(text='', bg='black', fg='white')
+timer_label.grid(row=1, column=1)
 
+next_word()
+timer(5)
 
 window.mainloop()
