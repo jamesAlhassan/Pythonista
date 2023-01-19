@@ -1,6 +1,7 @@
 from tkinter import *
 import pandas as pd
 from random import choice
+import time
 
 # CONSTANTS
 BACKGROUND_COLOR = "#B1DDC6"
@@ -27,7 +28,6 @@ def unkown_word():
 
 
 
-
 # Window Setup
 window = Tk()
 window.title('Flashy')
@@ -40,12 +40,9 @@ front_img = PhotoImage(file='images/card_front.png')
 back_img = PhotoImage(file='images/card_back.png')
 background = canvas.create_image(400, 263, image=front_img)
 
-
-# english_bg = canvas.create_image(400, 263, image=back_img)
-
 language = canvas.create_text(400, 150, text='Language', font=('Arial', 40, 'italic'))
 word = canvas.create_text(400, 263, text='Word', font=('Arial', 60, 'bold'))
-canvas.grid(row=0, column=0, columnspan=2)
+canvas.grid(row=0, column=0, columnspan=3)
 
 # Buttons Setup
 cross_img = PhotoImage(file='./images/wrong.png')
@@ -54,10 +51,12 @@ cross_button.grid(row=1, column=0)
 
 check_img = PhotoImage(file='./images/right.png')
 check_button = Button(image=check_img, highlightthickness=0, command=next_word)
-check_button.grid(row=1, column=1)
+check_button.grid(row=1, column=2)
 next_word()
 
-
+# timer
+timer = Label(text='', bg='black', fg='white')
+timer.grid(row=1, column=1)
 
 
 window.mainloop()
