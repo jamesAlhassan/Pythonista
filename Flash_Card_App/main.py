@@ -10,13 +10,14 @@ data = pd.read_csv('./data/french_words.csv')
 data_dict = data.to_dict(orient='records')
 current_card = {}
 
+
 # Functions
 def next_word():
     global current_card
     current_card = choice(data_dict)
     canvas.itemconfig(language, text='French')
     canvas.itemconfig(word, text=current_card['French'])
-
+    canvas.itemconfig(background, image=front_img)
 
 
 def unkown_word():
@@ -25,10 +26,13 @@ def unkown_word():
     canvas.itemconfig(background, image=back_img)
 
 
+
+
 # Window Setup
 window = Tk()
 window.title('Flashy')
 window.config(pady=50, padx=50, bg=BACKGROUND_COLOR)
+window.after(5000, unkown_word)
 
 # Canvas Setup
 canvas = Canvas(width=800, height=526, bg=BACKGROUND_COLOR)
