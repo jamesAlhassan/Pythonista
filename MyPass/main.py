@@ -71,6 +71,8 @@ def save_password_details():
         messagebox.showinfo(title='Done', message=f'{website_input} successfully added to the database')
 
 # ---------------------------- SEARCH PASSWORD ------------------------------- #
+
+
 def find_password():
     website_input = website_entry.get()
     try:
